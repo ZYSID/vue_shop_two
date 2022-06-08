@@ -4,11 +4,9 @@
     <!-- 头部区域 -->
     <el-header>
       <div class="title">
-        <img src="../assets/img/未标题-1.png"
-             alt />电商管理系统
+        <img src="../assets/img/未标题-1.png" alt />电商管理系统
       </div>
-      <el-button type="info"
-                 @click="homeOut">退出</el-button>
+      <el-button type="info" @click="homeOut">退出</el-button>
     </el-header>
 
     <!-- 页面主体 -->
@@ -16,21 +14,12 @@
       <!-- 侧边栏 -->
       <el-aside :width="iscollapse ? '64px' : '200px'">
         <!-- 折叠按钮 -->
-        <div class="toggle-button"
-             @click="toggleBtn">|||</div>
+        <div class="toggle-button" @click="toggleBtn">|||</div>
         <!-- 背景颜色 -->
-        <el-menu :collapse="iscollapse"
-                 :collapse-transition="false"
-                 unique-opened
-                 background-color="rgb(80, 79, 85)"
-                 text-color="#fff"
-                 active-text-color="#adff81"
-                 router
-                 :default-active:="activePath">
+        <el-menu :collapse="iscollapse" :collapse-transition="false" unique-opened background-color="rgb(80, 79, 85)"
+          text-color="#fff" active-text-color="#adff81" router :default-active="activePath">
           <!-- 一级菜单 -->
-          <el-submenu :index="item.id + ''"
-                      v-for="item in menuList"
-                      :key="item.id">
+          <el-submenu :index="item.id + ''" v-for="item in menuList" :key="item.id">
             <!-- 一级菜单模板区 -->
             <template slot="title">
               <!-- 图标 -->
@@ -40,10 +29,8 @@
             </template>
 
             <!-- 二级菜单 -->
-            <el-menu-item :index="'/' + items.path"
-                          v-for="items in menuListOne"
-                          :key="items.id"
-                          @click="saveMavState('/' + items.path)">
+            <el-menu-item :index="'/' + items.path" v-for="items in menuListOne" :key="items.id"
+              @click="saveMavState('/' + items.path)">
               <template slot="title">
                 <!-- 图标 -->
                 <i class="el-icon-menu"></i>
@@ -73,9 +60,6 @@ export default {
       // 左侧菜单列表
       menuList: [
         { id: 1, name: '导航一' },
-        { id: 2, name: '导航二' },
-        { id: 3, name: '导航三' },
-        { id: 5, name: '导航四' }
       ],
       menuListOne: [
         { id: 11, name: '用户列表', path: 'Users' },
@@ -86,8 +70,9 @@ export default {
         { id: 16, name: '商品列表', path: 'List' },
         { id: 17, name: '订单列表', path: 'Order' },
         { id: 18, name: '订单图表', path: 'Report' },
-        { id: 19, name: '监听事件', path: 'Input' },
+        { id: 19, name: '监听事件省市级', path: 'Input' },
         { id: 20, name: 'Vuex练习', path: 'Vuex' },
+        { id: 21, name: '文件上传', path: 'Files' },
 
       ],
       iconObj: {
@@ -132,6 +117,7 @@ export default {
 .home-container {
   height: 100%;
 }
+
 .el-header {
   background-color: rgb(46, 46, 46);
   display: flex;
@@ -141,20 +127,25 @@ export default {
   color: #ffffff;
   font-size: 20px;
 }
+
 .title {
   display: flex;
   align-items: center;
 }
+
 .el-header img {
   height: 40px;
   width: 40px;
 }
+
 .el-aside {
   background-color: rgb(80, 79, 85);
 }
+
 .el-main {
   background-color: #ffffff;
 }
+
 .el-menu {
   border: none;
 }
@@ -162,6 +153,7 @@ export default {
 .iconfont {
   margin-right: 10px;
 }
+
 .toggle-button {
   background-color: rgb(116, 116, 117);
   font-size: 10px;

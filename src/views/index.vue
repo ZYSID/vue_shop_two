@@ -99,6 +99,7 @@ export default {
         this.indexForm.Password = ''
         console.log(this.indexForm.Password)
       }
+      
     },
   },
 }
